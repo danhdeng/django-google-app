@@ -59,7 +59,9 @@ ROOT_URLCONF = 'django_google_app.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            'templates'
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -122,13 +124,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATICFILES_DIR =[
+STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT =os.path.join(BASE_DIR, 'static_cdn')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_cdn')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -140,9 +142,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 GOOGLE_API_KEY='AIzaSyBGk8Y_McbyXW_kuKDW-wErUUO_EaWhTsk'
 
-RECAPTCHA_KEY='6LcYYwgcAAAAAPPSo8sEPDPMEzMDQN6OKTsL37Cx'
+RECAPTCHA_PUBLIC_KEY='6LcYYwgcAAAAAPPSo8sEPDPMEzMDQN6OKTsL37Cx'
 
-RECAPTCHA_SECRET_KEY='6LcYYwgcAAAAANLeq_v5Qohey8DkvStAmFykUCw-'
+RECAPTCHA_PRIVATE_KEY='6LcYYwgcAAAAANLeq_v5Qohey8DkvStAmFykUCw-'
 
 LOGIN_URL='users:sign-in'
 LOGIN_REDIRECT_URL='users:account'
